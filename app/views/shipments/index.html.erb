@@ -1,0 +1,51 @@
+<%= render 'shared/content_title', title: 'All Shipments' %> 
+
+Download:
+<%= link_to 'CSV', shipments_path(format: 'csv') %>
+<p>
+  <br>
+
+<div class = 'row'>
+
+    <ul>
+      <b><div class = 'span2'> <%= 'Product Name'%></b> </div>
+        <b><div class = 'span2'><%= 'Address' %> </b></div>
+        <b><div class = 'span2'><%= 'Payment Mehtod' %> </b></div>
+        <b><div class = 'span2'><%= 'Provider' %> </b></div>
+        <b><div class = 'span1'><%= 'Weight' %></b></div>
+        <b><div class = 'span4'><%= 'Date' %></b></div>
+        
+      </ul>
+</div>
+
+
+<% @shipments.each do |shipment| %>
+  <div class = "row">
+    <div class = "span12">
+      <p> 
+        <div class = 'span2'>
+          <%= shipment.order.product_name %>
+        </div>
+        <div class = 'span2'>
+          <%= shipment.order.address %>
+        </div>
+        <div class = 'span2'>
+          <%= shipment.order.payment %>
+        </div>
+        
+        <div class = 'span2'>
+          <%= shipment.service_type %>
+        </div>
+        <div class = 'span1'>
+          <%= shipment.weight %>
+        </div>
+        
+          <%= shipment.created_at %>
+          <%= link_to 'Show Shipment', order_shipment_path(shipment.order, shipment) %>
+        
+      </p>
+    </div>
+  </div>
+
+      
+<% end %>

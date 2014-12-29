@@ -1,0 +1,16 @@
+<%= render 'shared/content_title', title: 'Shipping Label' %>
+
+
+
+<div class = 'well'>
+  <%= @shipment.order.product_name %>
+  <p>
+  <%= @shipment.order.address %>
+    <p>
+  <%= @shipment.order.payment %>
+      <p>
+  <%= @shipment.service_type %>
+        <p>
+<%= @shipment.weight %>
+  
+</div> 

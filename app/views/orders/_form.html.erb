@@ -1,0 +1,15 @@
+
+<div class = "well">
+  <%= form_for @order do |f| %>
+  <%= f.label :product_name %>
+  <%= f.text_field :product_name %>
+  <%= f.label :address %>
+  <%= f.text_field :address%>
+  <%= f.label :payment %>
+  <%= f.text_field :payment%>
+  <br>
+  <br>
+  <%= f.submit (@order.new_record? ? 'Create Order' : 'Edit Order'), class: 'btn btn-primary' %>
+
+  <%end%>
+</div>
